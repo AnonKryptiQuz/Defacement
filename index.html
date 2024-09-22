@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Taken Down</title>
+    <link rel="icon" href="files/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            cursor: url('files/cursor/Arrow.cur'), auto;
+            user-select: none;
+        }
+        img {
+            width: 350px;
+            height: auto;
+            margin-top: 20px;
+            cursor: url('files/cursor/Hand.cur'), pointer;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        .content {
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Consolas', monospace;
+            font-size: 1.8em;
+            color: red;
+            font-weight: bold;
+            animation: flicker 0.75s infinite alternate;
+            text-transform: uppercase;
+        }
+        .message {
+            font-family: 'Consolas', monospace;
+            font-size: 1.2em;
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .promise {
+            font-family: 'Courier', monospace;
+            font-size: 1.4em;
+            color: red;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            animation: glowing 1.5s infinite alternate;
+            text-align: center;
+            font-weight: normal;
+        }
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        @keyframes glowing {
+            0% {
+                text-shadow: 0 0 3px red, 0 0 5px red, 0 0 10px red, 0 0 15px red;
+            }
+            50% {
+                text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red, 0 0 25px red;
+            }
+            100% {
+                text-shadow: 0 0 3px red, 0 0 5px red, 0 0 10px red, 0 0 15px red;
+            }
+        }
+        .message-line {
+            font-family: 'Consolas', monospace;
+            font-size: 1.5em;
+            color: lime;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 2s steps(30, end) forwards;
+            margin: 0;
+            text-align: center;
+        }
+        .line-1 { animation-delay: 0s; }
+        .line-2 { animation-delay: 2.5s; }
+        .line-3 { animation-delay: 5s; }
+        .line-4 { animation-delay: 7.5s; }
+        .line-5 { animation-delay: 18.5s; }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="files/audio.mp3" loop></audio>
+    <img src="files/image.png" alt="Image" title="Click me" onclick="playAudio()" />
+    <div class="content">
+        <strong>THIS DOMAIN HAS BEEN SEIZED BY AnonKryptiQuz</strong>
+    </div>
+    <div class="message">
+        You have crossed a dangerous line.<br>
+        Stop all attempts to track down AnonKryptiQuz.<br>
+        You have provoked something you cannot control.
+    </div>
+    <div class="promise">
+        This is not a threat. This is a promise.
+    </div>
+    
+    <div id="anonymous-messages" style="display: none;">
+        <p class="message-line line-1">We Are Anonymous.</p>
+        <p class="message-line line-2">We Are Legion.</p>
+        <p class="message-line line-3">We Do Not Forgive.</p>
+        <p class="message-line line-4">We Do Not Forget.</p>
+        <p class="message-line line-5">Expect Us.</p>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+
+        function playAudio() {
+            audio.currentTime = 46;
+            audio.play().catch(error => {
+                console.log('Audio playback prevented:', error);
+            });
+            setTimeout(showAnonymousMessages, 1000);
+        }
+
+        function showAnonymousMessages() {
+            document.getElementById('anonymous-messages').style.display = 'block';
+        }
+
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === 'u' || event.key === 'I' || event.key === 'i')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

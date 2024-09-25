@@ -19,4 +19,4 @@ This project is intended for educational purposes only. It is not a promotion of
 
 ## **Author**
 
-**Created by:** [AnonKryptiQuz](https://x.com/AnonKryptiQuz)
+**Created by:** [AnonKryptiQuz](https://AnonKryptiQuz.github.io/)
